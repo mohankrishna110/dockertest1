@@ -26,7 +26,7 @@ pipeline {
         stage('Deploy to Docker Host') {
           steps {
             sh    'docker -H tcp://10.1.1.181:2375 stop feature 1 || true'
-            sh    'docker -H tcp://10.1.1.181:2375 run --rm -dit --name feature1 --hostname feature1 -p 8100:80 mohan110/pipelinetestprod:${BUILD_NUMBER}'
+            sh    'docker -H tcp://10.1.1.181:2375 run --rm -dit --name feature1 --hostname feature1 -p 8100:80 mohan110/feature1:${BUILD_NUMBER}'
             }
         }
 
