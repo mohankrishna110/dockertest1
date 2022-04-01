@@ -13,13 +13,13 @@ pipeline {
           steps {
             sh 'cd /var/lib/jenkins/workspace/pipeline2'
             sh 'cp  /var/lib/jenkins/workspace/pipeline2/dockertest1/* /var/lib/jenkins/workspace/pipeline2'
-            sh 'docker build -t mohan110/pipelinetestprod:${BUILD_NUMBER} .'
+            sh 'docker build -t mohan110/feature2:${BUILD_NUMBER} .'
             }
         }
 
         stage('Push Image to Docker Hub') {
           steps {
-           sh    'docker push mohan110/pipelinetestprod:${BUILD_NUMBER}'
+           sh    'docker push mohan110/feature2:${BUILD_NUMBER}'
            }
         }
 
